@@ -1,0 +1,23 @@
+# Emin Fırın
+
+> Emin Fırın, Antalya / Muratpaşa merkezli; ekmek, poğaça-börek, simit-açma, tatlı ürünler ve sandviç ekmeği kategorilerinde, geleneksel taş fırın yöntemleriyle her gün taze üretim yapan kurumsal bir fırın & kafe markasıdır. Slogan: "Emin Ellerden Gelen Lezzet". Standart kalite, hijyen ve şeffaflık ilkeleriyle çalışır; etkinlik ve kurumsal müşteriler için toplu sipariş/özel üretim hizmeti de sunar.
+
+Detaylı ve eksiksiz marka, ürün, misyon/vizyon, değerler, iletişim ve SSS içeriği için [llms-full.txt](https://eminfirincafe.com/llms-full.txt) dosyasına bakınız.
+
+## Sayfalar
+
+- [Anasayfa](https://eminfirincafe.com/): Marka tanıtımı, misyon & vizyon, ürün kategorileri, temel değerler, iletişim bilgileri ve konum haritası.
+- [Sıkça Sorulan Sorular](https://eminfirincafe.com/sss.html): Marka, ürünler, sipariş & toplu sipariş, hijyen & kalite, lokasyon & iletişim ile ilgili sorular ve yanıtlar.
+
+## İletişim
+
+- Adres: Bayındır Mh. Pınar Cd., Muratpaşa / Antalya, Türkiye
+- Telefon / WhatsApp: +90 549 347 07 47
+- E-posta: bilgi@eminfirincafe.com
+- Instagram: https://www.instagram.com/eminfirincafe/
+- Facebook: https://www.facebook.com/profile.php?id=61590968756710
+
+## Optional
+
+- [Sitemap](https://eminfirincafe.com/sitemap.xml)
+- [Marka logosu](https://eminfirincafe.com/assets/images/Logo.png)
