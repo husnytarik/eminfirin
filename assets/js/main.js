@@ -46,6 +46,20 @@ if (mapEl && window.L) {
   mapEl.addEventListener('mouseleave', () => map.scrollWheelZoom.disable());
 }
 
+// FAQ accordion (SSS sayfası)
+document.querySelectorAll('.faq-item__q').forEach(btn => {
+  btn.setAttribute('aria-expanded', 'false');
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-item__a');
+    const isOpen = item.classList.contains('open');
+
+    item.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    answer.style.maxHeight = isOpen ? null : answer.scrollHeight + 'px';
+  });
+});
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {

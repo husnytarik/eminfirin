@@ -1,364 +1,456 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emin Fırın — Emin Ellerden Gelen Lezzet</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emin Fırın — Emin Ellerden Gelen Lezzet</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <div class="nav__logo">EMİN FIRIN</div>
-    <ul class="nav__links" id="navLinks">
-      <li><a href="#hero">Anasayfa</a></li>
-      <li><a href="#mv">Kurumsal</a></li>
-      <li><a href="#products">Ürünler</a></li>
-      <li><a href="#values">Değerler</a></li>
-      <li><a href="#contact">İletişim</a></li>
-    </ul>
-    <button class="nav__menu" aria-label="Menü" id="navMenu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+      <a href="#hero" class="nav__logo">
+        <img src="assets/images/Logo.png" alt="Emin Fırın" />
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#hero">Anasayfa</a></li>
+        <li><a href="#mv">Kurumsal</a></li>
+        <li><a href="#products">Ürünler</a></li>
+        <li><a href="#values">Değerler</a></li>
+        <li><a href="sss.html">SSS</a></li>
+        <li><a href="#contact">İletişim</a></li>
+      </ul>
+      <button class="nav__menu" aria-label="Menü" id="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
 
-  <!-- ① HERO — bg: a1 -->
-  <section id="hero" class="bg-section bg-section--1">
-    <div class="bg-section__overlay"></div>
-    <div class="hero-content">
-      <p class="eyebrow" data-reveal>Emin Fırın</p>
-      <h1 class="hero-headline" data-reveal>Emin Ellerden<br>Gelen<br>Lezzet</h1>
-      <div class="hero-rule" data-reveal></div>
-      <p class="hero-sub" data-reveal>Antalya'nın güvenilir fırın markası</p>
-    </div>
-    <a href="#mv" class="scroll-hint" aria-label="Aşağı kaydır">
-      <span class="scroll-hint__line"></span>
-    </a>
-  </section>
-
-  <!-- ② MİSYON & VİZYON — dark section -->
-  <section id="mv" class="content-section content-section--split">
-    <div class="split__col split__col--left" data-reveal>
-      <span class="section-tag">Misyon</span>
-      <h2 class="section-heading">Neden<br>Varız?</h2>
-    </div>
-    <div class="split__col split__col--right" data-reveal>
-      <p class="mission-text">
-        Günlük hayatta herkesin güvenle ulaşabileceği, her şubede aynı standartta üretilen,
-        ustalıkla hazırlanmış fırın ürünlerini sunmak; kalite, hijyen ve lezzette sürekliliği
-        garanti eden bir üretim ve hizmet anlayışı oluşturmak.
-      </p>
-      <div class="divider"></div>
-      <span class="section-tag">Vizyon</span>
-      <p class="mission-text mission-text--vision">
-        Türkiye'de ve uluslararası pazarda, her şubesinde aynı kaliteyi sunan,
-        üretim standardı ve ustalık yaklaşımıyla örnek gösterilen, güvenilir ve
-        ölçeklenebilir fırın markası olmak.
-      </p>
-    </div>
-  </section>
-
-  <!-- ③ KÖPRÜ — bg: a2 -->
-  <section class="bg-section bg-section--2">
-    <div class="bg-section__overlay"></div>
-    <div class="bridge-content" data-reveal>
-      <blockquote class="bridge-quote">
-        "Lezzet ve kalite tesadüfe bırakılmaz;<br>
-        her gün yeniden aynı özenle üretilir."
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- ④ ÜRÜNLERİMİZ — dark section -->
-  <section id="products" class="content-section content-section--products">
-
-    <div class="products-header" data-reveal>
-      <div>
-        <span class="section-tag">Ürünlerimiz</span>
-        <h2 class="section-heading">Her Gün Taze,<br>Her Zaman Aynı Kalite</h2>
+    <!-- ① HERO — bg: a1 -->
+    <section id="hero" class="bg-section bg-section--1">
+      <div class="bg-section__overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow" data-reveal>Emin Fırın</p>
+        <h1 class="hero-headline" data-reveal>
+          Emin Ellerden<br />Gelen<br />Lezzet
+        </h1>
+        <div class="hero-rule" data-reveal></div>
+        <p class="hero-sub" data-reveal>Antalya'nın güvenilir fırın markası</p>
       </div>
-      <p class="products-header__sub">
-        Geleneksel taş fırın yöntemleriyle hazırlanan ürünlerimiz;<br>
-        katkısız, doğal ve her gün taze üretilmektedir.
-      </p>
-    </div>
+      <a href="#mv" class="scroll-hint" aria-label="Aşağı kaydır">
+        <span class="scroll-hint__line"></span>
+      </a>
+    </section>
 
-    <div class="products-grid">
-
-      <div class="product-cat" data-reveal>
-        <div class="product-cat__img" style="background-image:url('https://images.unsplash.com/photo-1534620808146-d33bb39128b2?q=80&w=800&auto=format&fit=crop')"></div>
-        <div class="product-cat__top">
-          <span class="product-cat__num">01</span>
-          <span class="product-cat__tag">Temel Ürün</span>
-        </div>
-        <h3 class="product-cat__title">Ekmekler</h3>
-        <p class="product-cat__text">
-          Somun, tam buğday, kepekli, çavdar, pide ve francala.
-          Her çeşit, günün ilk saatlerinde taş fırında pişirilir.
+    <!-- ② MİSYON & VİZYON — dark section -->
+    <section id="mv" class="content-section content-section--split">
+      <div class="split__col split__col--left" data-reveal>
+        <span class="section-tag">Misyon</span>
+        <h2 class="section-heading">Neden<br />Varız?</h2>
+      </div>
+      <div class="split__col split__col--right" data-reveal>
+        <p class="mission-text">
+          Günlük hayatta herkesin güvenle ulaşabileceği, her şubede aynı
+          standartta üretilen, ustalıkla hazırlanmış fırın ürünlerini sunmak;
+          kalite, hijyen ve lezzette sürekliliği garanti eden bir üretim ve
+          hizmet anlayışı oluşturmak.
         </p>
-        <ul class="product-cat__list">
-          <li>Somun Ekmek</li>
-          <li>Tam Buğday Ekmeği</li>
-          <li>Kepekli Ekmek</li>
-          <li>Çavdar Ekmeği</li>
-          <li>Taze Pide</li>
-        </ul>
-      </div>
-
-      <div class="product-cat" data-reveal>
-        <div class="product-cat__img" style="background-image:url('https://images.unsplash.com/photo-1568254183919-78a4f43a2877?q=80&w=800&auto=format&fit=crop')"></div>
-        <div class="product-cat__top">
-          <span class="product-cat__num">02</span>
-          <span class="product-cat__tag">Günlük Taze</span>
-        </div>
-        <h3 class="product-cat__title">Poğaça & Börek</h3>
-        <p class="product-cat__text">
-          İnce yufka, kaliteli iç harç ve ustalıkla şekillendirilmiş hamur.
-          Her gün sabah erken saatlerde hazırlanır.
+        <div class="divider"></div>
+        <span class="section-tag">Vizyon</span>
+        <p class="mission-text mission-text--vision">
+          Türkiye'de ve uluslararası pazarda, her şubesinde aynı kaliteyi sunan,
+          üretim standardı ve ustalık yaklaşımıyla örnek gösterilen, güvenilir
+          ve ölçeklenebilir fırın markası olmak.
         </p>
-        <ul class="product-cat__list">
-          <li>Peynirli Poğaça</li>
-          <li>Zeytinli Poğaça</li>
-          <li>Patatesli Poğaça</li>
-          <li>Sigara Böreği</li>
-          <li>Su Böreği</li>
-        </ul>
       </div>
+    </section>
 
-      <div class="product-cat" data-reveal>
-        <div class="product-cat__img" style="background-image:url('https://images.unsplash.com/photo-1623334044303-241021148842?q=80&w=800&auto=format&fit=crop')"></div>
-        <div class="product-cat__top">
-          <span class="product-cat__num">03</span>
-          <span class="product-cat__tag">Sabah Keyfi</span>
+    <!-- ③ KÖPRÜ — bg: a2 -->
+    <section class="bg-section bg-section--2">
+      <div class="bg-section__overlay"></div>
+      <div class="bridge-content" data-reveal>
+        <blockquote class="bridge-quote">
+          "Lezzet ve kalite tesadüfe bırakılmaz;<br />
+          her gün yeniden aynı özenle üretilir."
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ④ ÜRÜNLERİMİZ — dark section -->
+    <section id="products" class="content-section content-section--products">
+      <div class="products-header" data-reveal>
+        <div>
+          <span class="section-tag">Ürünlerimiz</span>
+          <h2 class="section-heading">
+            Her Gün Taze,<br />Her Zaman Aynı Kalite
+          </h2>
         </div>
-        <h3 class="product-cat__title">Simit & Açma</h3>
-        <p class="product-cat__text">
-          Geleneksel tarife sadık, susam kaplı taş fırın simidi ve
-          günün her saati taze açma çeşitleri.
+        <p class="products-header__sub">
+          Geleneksel taş fırın yöntemleriyle hazırlanan ürünlerimiz;<br />
+          katkısız, doğal ve her gün taze üretilmektedir.
         </p>
-        <ul class="product-cat__list">
-          <li>Taş Fırın Simidi</li>
-          <li>Sade Açma</li>
-          <li>Çikolatalı Açma</li>
-          <li>Zeytinli Çörek</li>
-          <li>Kandil Simidi</li>
-        </ul>
       </div>
 
-      <div class="product-cat" data-reveal>
-        <div class="product-cat__img" style="background-image:url('https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=800&auto=format&fit=crop')"></div>
-        <div class="product-cat__top">
-          <span class="product-cat__num">04</span>
-          <span class="product-cat__tag">Tatlı Serisi</span>
+      <div class="products-grid">
+        <div class="product-cat" data-reveal>
+          <div
+            class="product-cat__img"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1534620808146-d33bb39128b2?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+          ></div>
+          <div class="product-cat__top">
+            <span class="product-cat__num">01</span>
+            <span class="product-cat__tag">Temel Ürün</span>
+          </div>
+          <h3 class="product-cat__title">Ekmekler</h3>
+          <p class="product-cat__text">
+            Somun, tam buğday, kepekli, çavdar, pide ve francala. Her çeşit,
+            günün ilk saatlerinde taş fırında pişirilir.
+          </p>
+          <ul class="product-cat__list">
+            <li>Somun Ekmek</li>
+            <li>Tam Buğday Ekmeği</li>
+            <li>Kepekli Ekmek</li>
+            <li>Çavdar Ekmeği</li>
+            <li>Taze Pide</li>
+          </ul>
         </div>
-        <h3 class="product-cat__title">Tatlı Ürünler</h3>
-        <p class="product-cat__text">
-          Sade ve çikolatalı kurabiyeden dilim keke kadar;
-          şeker tadında ama ölçülü, özenlice hazırlanmış ürünler.
-        </p>
-        <ul class="product-cat__list">
-          <li>Tereyağlı Kurabiye</li>
-          <li>Çikolatalı Kek</li>
-          <li>Limonlu Dilim Pasta</li>
-          <li>Islak Kek</li>
-          <li>Fındıklı Rulo</li>
-        </ul>
-      </div>
 
-      <div class="product-cat" data-reveal>
-        <div class="product-cat__img" style="background-image:url('https://images.unsplash.com/photo-1601585099780-6b176dc702af?q=80&w=800&auto=format&fit=crop')"></div>
-        <div class="product-cat__top">
-          <span class="product-cat__num">05</span>
-          <span class="product-cat__tag">Pratik Çözüm</span>
+        <div class="product-cat" data-reveal>
+          <div
+            class="product-cat__img"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1568254183919-78a4f43a2877?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+          ></div>
+          <div class="product-cat__top">
+            <span class="product-cat__num">02</span>
+            <span class="product-cat__tag">Günlük Taze</span>
+          </div>
+          <h3 class="product-cat__title">Poğaça & Börek</h3>
+          <p class="product-cat__text">
+            İnce yufka, kaliteli iç harç ve ustalıkla şekillendirilmiş hamur.
+            Her gün sabah erken saatlerde hazırlanır.
+          </p>
+          <ul class="product-cat__list">
+            <li>Peynirli Poğaça</li>
+            <li>Zeytinli Poğaça</li>
+            <li>Patatesli Poğaça</li>
+            <li>Sigara Böreği</li>
+            <li>Su Böreği</li>
+          </ul>
         </div>
-        <h3 class="product-cat__title">Sandviç & Ekmek</h3>
-        <p class="product-cat__text">
-          Restoran, kafe ve evler için; tost, sandviç ve hamburger ekmeği
-          seçenekleri — toplu sipariş ile temin edilebilir.
-        </p>
-        <ul class="product-cat__list">
-          <li>Tost Ekmeği</li>
-          <li>Hamburger Ekmeği</li>
-          <li>Sandviç Ekmeği</li>
-          <li>Bazlama</li>
-          <li>Lavaş</li>
-        </ul>
-      </div>
 
-      <div class="product-cat product-cat--accent" data-reveal>
-        <div class="product-cat__top">
-          <span class="product-cat__num">06</span>
-          <span class="product-cat__tag">Kurumsal</span>
+        <div class="product-cat" data-reveal>
+          <div
+            class="product-cat__img"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1623334044303-241021148842?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+          ></div>
+          <div class="product-cat__top">
+            <span class="product-cat__num">03</span>
+            <span class="product-cat__tag">Sabah Keyfi</span>
+          </div>
+          <h3 class="product-cat__title">Simit & Açma</h3>
+          <p class="product-cat__text">
+            Geleneksel tarife sadık, susam kaplı taş fırın simidi ve günün her
+            saati taze açma çeşitleri.
+          </p>
+          <ul class="product-cat__list">
+            <li>Taş Fırın Simidi</li>
+            <li>Sade Açma</li>
+            <li>Çikolatalı Açma</li>
+            <li>Zeytinli Çörek</li>
+            <li>Kandil Simidi</li>
+          </ul>
         </div>
-        <h3 class="product-cat__title">Özel & Toplu<br>Sipariş</h3>
-        <p class="product-cat__text">
-          Etkinlik, kurumsal ikram ve restoran tedariki için özel üretim.
-          Standart kalitemiz, sizin ölçeğinizde.
-        </p>
-        <a href="#contact" class="product-cat__cta">Teklif Alın</a>
-      </div>
 
-    </div>
-  </section>
-
-  <!-- ⑤ TEMEL DEĞERLER — dark section -->
-  <section id="values" class="content-section content-section--values">
-    <div class="manifesto-header" data-reveal>
-      <span class="section-tag">Temel Değerler</span>
-    </div>
-
-    <div class="manifesto-list">
-
-      <div class="manifesto-item" data-reveal>
-        <div class="manifesto-item__num">01</div>
-        <div class="manifesto-item__body">
-          <h3 class="manifesto-item__title">Ustalık</h3>
-          <p class="manifesto-item__text">Üretimin merkezinde deneyim, bilgi ve doğru teknik vardır. Her ürün bu yaklaşım ile hazırlanır.</p>
+        <div class="product-cat" data-reveal>
+          <div
+            class="product-cat__img"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+          ></div>
+          <div class="product-cat__top">
+            <span class="product-cat__num">04</span>
+            <span class="product-cat__tag">Tatlı Serisi</span>
+          </div>
+          <h3 class="product-cat__title">Tatlı Ürünler</h3>
+          <p class="product-cat__text">
+            Sade ve çikolatalı kurabiyeden dilim keke kadar; şeker tadında ama
+            ölçülü, özenlice hazırlanmış ürünler.
+          </p>
+          <ul class="product-cat__list">
+            <li>Tereyağlı Kurabiye</li>
+            <li>Çikolatalı Kek</li>
+            <li>Limonlu Dilim Pasta</li>
+            <li>Islak Kek</li>
+            <li>Fındıklı Rulo</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="manifesto-item" data-reveal>
-        <div class="manifesto-item__num">02</div>
-        <div class="manifesto-item__body">
-          <h3 class="manifesto-item__title">Standart Kalite</h3>
-          <p class="manifesto-item__text">Tüm şubelerde aynı tarif, aynı süreç ve aynı kalite korunur.</p>
+        <div class="product-cat" data-reveal>
+          <div
+            class="product-cat__img"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1601585099780-6b176dc702af?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+          ></div>
+          <div class="product-cat__top">
+            <span class="product-cat__num">05</span>
+            <span class="product-cat__tag">Pratik Çözüm</span>
+          </div>
+          <h3 class="product-cat__title">Sandviç & Ekmek</h3>
+          <p class="product-cat__text">
+            Restoran, kafe ve evler için; tost, sandviç ve hamburger ekmeği
+            seçenekleri — toplu sipariş ile temin edilebilir.
+          </p>
+          <ul class="product-cat__list">
+            <li>Tost Ekmeği</li>
+            <li>Hamburger Ekmeği</li>
+            <li>Sandviç Ekmeği</li>
+            <li>Bazlama</li>
+            <li>Lavaş</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="manifesto-item" data-reveal>
-        <div class="manifesto-item__num">03</div>
-        <div class="manifesto-item__body">
-          <h3 class="manifesto-item__title">Güven</h3>
-          <p class="manifesto-item__text">Müşteri için her ürünün güvenle tüketilebilir olması temel önceliktir.</p>
-        </div>
-      </div>
-
-      <div class="manifesto-item" data-reveal>
-        <div class="manifesto-item__num">04</div>
-        <div class="manifesto-item__body">
-          <h3 class="manifesto-item__title">Hijyen ve Temizlik</h3>
-          <p class="manifesto-item__text">Üretimden servise kadar tüm süreçlerde yüksek hijyen standardı uygulanır.</p>
-        </div>
-      </div>
-
-      <div class="manifesto-item" data-reveal>
-        <div class="manifesto-item__num">05</div>
-        <div class="manifesto-item__body">
-          <h3 class="manifesto-item__title">Süreklilik</h3>
-          <p class="manifesto-item__text">Lezzet ve kalite tesadüfe bırakılmaz; her gün yeniden aynı özenle üretilir.</p>
-        </div>
-      </div>
-
-      <div class="manifesto-item" data-reveal>
-        <div class="manifesto-item__num">06</div>
-        <div class="manifesto-item__body">
-          <h3 class="manifesto-item__title">Şeffaflık</h3>
-          <p class="manifesto-item__text">Üretim ve hizmet süreçlerinde netlik, açıklık ve güven esas alınır.</p>
-        </div>
-      </div>
-
-      <div class="manifesto-item" data-reveal>
-        <div class="manifesto-item__num">07</div>
-        <div class="manifesto-item__body">
-          <h3 class="manifesto-item__title">Sadelik</h3>
-          <p class="manifesto-item__text">Abartıdan uzak, net, anlaşılır ve doğal bir ürün ve hizmet anlayışı benimsenir.</p>
+        <div class="product-cat product-cat--accent" data-reveal>
+          <div class="product-cat__top">
+            <span class="product-cat__num">06</span>
+            <span class="product-cat__tag">Kurumsal</span>
+          </div>
+          <h3 class="product-cat__title">Özel & Toplu<br />Sipariş</h3>
+          <p class="product-cat__text">
+            Etkinlik, kurumsal ikram ve restoran tedariki için özel üretim.
+            Standart kalitemiz, sizin ölçeğinizde.
+          </p>
+          <a href="#contact" class="product-cat__cta">Teklif Alın</a>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- ⑤ TEMEL DEĞERLER — dark section -->
+    <section id="values" class="content-section content-section--values">
+      <div class="manifesto-header" data-reveal>
+        <span class="section-tag">Temel Değerler</span>
+      </div>
 
-  <!-- ⑥ İLETİŞİM — bg: a3 -->
-  <section id="contact" class="bg-section bg-section--3">
-    <div class="bg-section__overlay"></div>
-    <div class="contact-wrap">
+      <div class="manifesto-list">
+        <div class="manifesto-item" data-reveal>
+          <div class="manifesto-item__num">01</div>
+          <div class="manifesto-item__body">
+            <h3 class="manifesto-item__title">Ustalık</h3>
+            <p class="manifesto-item__text">
+              Üretimin merkezinde deneyim, bilgi ve doğru teknik vardır. Her
+              ürün bu yaklaşım ile hazırlanır.
+            </p>
+          </div>
+        </div>
 
-      <div class="contact-content" data-reveal>
-        <p class="eyebrow">İletişim</p>
-        <h2 class="contact-headline">Bize Ulaşın</h2>
-        <div class="contact-list">
-          <a class="contact-line" href="mailto:bilgi@eminfirincafe.com">
-            <span class="contact-line__label">E-posta</span>
-            <span class="contact-line__val">bilgi@eminfirincafe.com</span>
+        <div class="manifesto-item" data-reveal>
+          <div class="manifesto-item__num">02</div>
+          <div class="manifesto-item__body">
+            <h3 class="manifesto-item__title">Standart Kalite</h3>
+            <p class="manifesto-item__text">
+              Tüm şubelerde aynı tarif, aynı süreç ve aynı kalite korunur.
+            </p>
+          </div>
+        </div>
+
+        <div class="manifesto-item" data-reveal>
+          <div class="manifesto-item__num">03</div>
+          <div class="manifesto-item__body">
+            <h3 class="manifesto-item__title">Güven</h3>
+            <p class="manifesto-item__text">
+              Müşteri için her ürünün güvenle tüketilebilir olması temel
+              önceliktir.
+            </p>
+          </div>
+        </div>
+
+        <div class="manifesto-item" data-reveal>
+          <div class="manifesto-item__num">04</div>
+          <div class="manifesto-item__body">
+            <h3 class="manifesto-item__title">Hijyen ve Temizlik</h3>
+            <p class="manifesto-item__text">
+              Üretimden servise kadar tüm süreçlerde yüksek hijyen standardı
+              uygulanır.
+            </p>
+          </div>
+        </div>
+
+        <div class="manifesto-item" data-reveal>
+          <div class="manifesto-item__num">05</div>
+          <div class="manifesto-item__body">
+            <h3 class="manifesto-item__title">Süreklilik</h3>
+            <p class="manifesto-item__text">
+              Lezzet ve kalite tesadüfe bırakılmaz; her gün yeniden aynı özenle
+              üretilir.
+            </p>
+          </div>
+        </div>
+
+        <div class="manifesto-item" data-reveal>
+          <div class="manifesto-item__num">06</div>
+          <div class="manifesto-item__body">
+            <h3 class="manifesto-item__title">Şeffaflık</h3>
+            <p class="manifesto-item__text">
+              Üretim ve hizmet süreçlerinde netlik, açıklık ve güven esas
+              alınır.
+            </p>
+          </div>
+        </div>
+
+        <div class="manifesto-item" data-reveal>
+          <div class="manifesto-item__num">07</div>
+          <div class="manifesto-item__body">
+            <h3 class="manifesto-item__title">Sadelik</h3>
+            <p class="manifesto-item__text">
+              Abartıdan uzak, net, anlaşılır ve doğal bir ürün ve hizmet
+              anlayışı benimsenir.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑥ İLETİŞİM — bg: a3 -->
+    <section id="contact" class="bg-section bg-section--3">
+      <div class="bg-section__overlay"></div>
+      <div class="contact-wrap">
+        <div class="contact-content" data-reveal>
+          <p class="eyebrow">İletişim</p>
+          <h2 class="contact-headline">Bize Ulaşın</h2>
+          <div class="contact-list">
+            <a class="contact-line" href="mailto:bilgi@eminfirincafe.com">
+              <span class="contact-line__label">E-posta</span>
+              <span class="contact-line__val">bilgi@eminfirincafe.com</span>
+            </a>
+            <a class="contact-line" href="tel:+905493470747">
+              <span class="contact-line__label">Telefon</span>
+              <span class="contact-line__val">+90 549 347 07 47</span>
+            </a>
+            <a
+              class="contact-line"
+              href="https://wa.me/905493470747"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="contact-line__label">WhatsApp</span>
+              <span class="contact-line__val">+90 549 347 07 47</span>
+            </a>
+            <a
+              class="contact-line"
+              href="https://maps.app.goo.gl/MA7RJ6diGyZ3HufC8"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="contact-line__label">Adres</span>
+              <span class="contact-line__val"
+                >Bayındır Mh. Pınar Cd.<br />Muratpaşa / Antalya</span
+              >
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-map" data-reveal>
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="#hero" class="footer__logo">
+            <img src="assets/images/Logo.png" alt="Emin Fırın" />
           </a>
-          <a class="contact-line" href="tel:+905493470747">
-            <span class="contact-line__label">Telefon</span>
-            <span class="contact-line__val">+90 549 347 07 47</span>
-          </a>
-          <a class="contact-line" href="https://wa.me/905493470747" target="_blank" rel="noopener">
-            <span class="contact-line__label">WhatsApp</span>
-            <span class="contact-line__val">+90 549 347 07 47</span>
-          </a>
-          <a class="contact-line" href="https://www.google.com/maps/search/?api=1&query=36.8971529,30.6731466" target="_blank" rel="noopener">
-            <span class="contact-line__label">Adres</span>
-            <span class="contact-line__val">Bayındır Mh. Pınar Cd.<br>Muratpaşa / Antalya</span>
-          </a>
+          <p class="footer__tagline">Emin Ellerden Gelen Lezzet</p>
+          <p class="footer__desc">
+            Geleneksel yöntemler ve modern hijyen standartlarıyla her gün taze
+            üretim yapan güvenilir fırın markası.
+          </p>
+          <div class="footer__social">
+            <a
+              href="https://www.instagram.com/eminfirincafe/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              class="footer__social-link"
+              >Instagram</a
+            >
+            <a
+              href="https://www.facebook.com/profile.php?id=61590968756710"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+              class="footer__social-link"
+              >Facebook</a
+            >
+          </div>
+        </div>
+
+        <div class="footer__nav">
+          <span class="footer__nav-title">Keşfet</span>
+          <ul>
+            <li><a href="#hero">Anasayfa</a></li>
+            <li><a href="#mv">Kurumsal</a></li>
+            <li><a href="#products">Ürünlerimiz</a></li>
+            <li><a href="#values">Değerlerimiz</a></li>
+            <li><a href="sss.html">SSS</a></li>
+            <li><a href="#contact">İletişim</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__nav">
+          <span class="footer__nav-title">Ürün Kategorileri</span>
+          <ul>
+            <li><a href="#products">Ekmekler</a></li>
+            <li><a href="#products">Poğaça & Börek</a></li>
+            <li><a href="#products">Simit & Açma</a></li>
+            <li><a href="#products">Tatlı Ürünler</a></li>
+            <li><a href="#products">Özel Sipariş</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__contact-col">
+          <span class="footer__nav-title">İletişim</span>
+          <p>
+            <a href="mailto:bilgi@eminfirincafe.com">bilgi@eminfirincafe.com</a>
+          </p>
+          <p><a href="tel:+905493470747">+90 549 347 07 47</a></p>
+          <p>
+            <a
+              href="https://maps.app.goo.gl/MA7RJ6diGyZ3HufC8"
+              target="_blank"
+              rel="noopener"
+              >Bayındır Mh. Pınar Cd.<br />Muratpaşa / Antalya</a
+            >
+          </p>
         </div>
       </div>
-
-      <div class="contact-map" data-reveal>
-        <div id="map"></div>
+      <div class="footer__bottom">
+        <span>© 2026 Emin Fırın. Tüm hakları saklıdır.</span>
+        <span>Emin Ellerden Gelen Lezzet</span>
       </div>
+    </footer>
 
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer__inner">
-
-      <div class="footer__brand">
-        <div class="footer__logo">EMİN FIRIN</div>
-        <p class="footer__tagline">Emin Ellerden Gelen Lezzet</p>
-        <p class="footer__desc">
-          Geleneksel yöntemler ve modern hijyen standartlarıyla
-          her gün taze üretim yapan güvenilir fırın markası.
-        </p>
-        <div class="footer__social">
-          <a href="https://www.instagram.com/eminfirincafe/" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link">Instagram</a>
-          <a href="https://www.facebook.com/profile.php?id=61590968756710" target="_blank" rel="noopener" aria-label="Facebook" class="footer__social-link">Facebook</a>
-        </div>
-      </div>
-
-      <div class="footer__nav">
-        <span class="footer__nav-title">Keşfet</span>
-        <ul>
-          <li><a href="#hero">Anasayfa</a></li>
-          <li><a href="#mv">Kurumsal</a></li>
-          <li><a href="#products">Ürünlerimiz</a></li>
-          <li><a href="#values">Değerlerimiz</a></li>
-          <li><a href="#contact">İletişim</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__nav">
-        <span class="footer__nav-title">Ürün Kategorileri</span>
-        <ul>
-          <li><a href="#products">Ekmekler</a></li>
-          <li><a href="#products">Poğaça & Börek</a></li>
-          <li><a href="#products">Simit & Açma</a></li>
-          <li><a href="#products">Tatlı Ürünler</a></li>
-          <li><a href="#products">Özel Sipariş</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__contact-col">
-        <span class="footer__nav-title">İletişim</span>
-        <p><a href="mailto:bilgi@eminfirincafe.com">bilgi@eminfirincafe.com</a></p>
-        <p><a href="tel:+905493470747">+90 549 347 07 47</a></p>
-        <p><a href="https://www.google.com/maps/search/?api=1&query=36.8971529,30.6731466" target="_blank" rel="noopener">Bayındır Mh. Pınar Cd.<br>Muratpaşa / Antalya</a></p>
-      </div>
-
-    </div>
-    <div class="footer__bottom">
-      <span>© 2026 Emin Fırın. Tüm hakları saklıdır.</span>
-      <span>Emin Ellerden Gelen Lezzet</span>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="assets/js/main.js"></script>
-</body>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
