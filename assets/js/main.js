@@ -27,6 +27,25 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealEls.forEach(el => revealObserver.observe(el));
 
+// Leaflet map — Emin Fırın location
+const mapEl = document.getElementById('map');
+if (mapEl && window.L) {
+  const coords = [36.8971529, 30.6731466];
+  const map = L.map('map', { scrollWheelZoom: false }).setView(coords, 16);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19
+  }).addTo(map);
+
+  L.marker(coords).addTo(map)
+    .bindPopup('<strong>Emin Fırın</strong><br>Bayındır Mh. Pınar Cd.<br>Muratpaşa / Antalya')
+    .openPopup();
+
+  mapEl.addEventListener('mouseenter', () => map.scrollWheelZoom.enable());
+  mapEl.addEventListener('mouseleave', () => map.scrollWheelZoom.disable());
+}
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
