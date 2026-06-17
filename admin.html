@@ -39,6 +39,7 @@
         font-family: var(--sans);
         min-height: 100vh;
         -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
 
       /* ─── LOGIN SCREEN ─────────────────────────────── */
@@ -301,6 +302,8 @@
 
       .panel__body {
         padding: 24px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
       }
 
       /* ─── ITEM TABLE ─────────────────────────────────── */
@@ -522,12 +525,159 @@
       }
 
       /* ─── RESPONSIVE ─────────────────────────────────── */
-      @media (max-width: 700px) {
+      @media (max-width: 768px) {
+        /* Giriş kutusu */
+        .login-box {
+          padding: 32px 20px;
+        }
+
+        /* Üst bar */
+        .app-top {
+          padding: 0 14px;
+          height: 52px;
+        }
+        .app-top__brand img {
+          height: 28px;
+        }
+        .app-top__brand span {
+          font-size: 0.75rem;
+        }
+
+        /* Ana grid → tek sütun */
         .app-main {
           grid-template-columns: 1fr;
+          padding: 16px 12px 60px;
+          gap: 16px;
         }
         .sidebar {
           position: static;
+        }
+
+        /* Panel */
+        .panel__head {
+          padding: 14px 16px;
+          flex-wrap: wrap;
+        }
+        .panel__body {
+          padding: 14px;
+        }
+
+        /* iOS: input font-size 16px altında sayfa zoom yapıyor */
+        input,
+        textarea,
+        select {
+          font-size: 16px;
+        }
+
+        /* Kategori listesi — büyük dokunma hedefi */
+        .cat-list__item {
+          min-height: 52px;
+          padding: 12px 14px;
+        }
+        .cat-list__item .btn--sm {
+          min-width: 34px;
+          min-height: 34px;
+        }
+
+        /* Tablo → kart görünümü */
+        .item-table thead {
+          display: none;
+        }
+        .item-table,
+        .item-table tbody {
+          display: block;
+        }
+        .item-table tr {
+          display: grid;
+          grid-template-columns: 56px 1fr auto;
+          grid-template-rows: auto auto;
+          gap: 4px 10px;
+          padding: 14px 0;
+          border-bottom: 1px solid var(--border);
+          align-items: center;
+        }
+        .item-table tr:last-child {
+          border-bottom: none;
+        }
+        .item-table tr:hover td {
+          background: none;
+        }
+        .item-table td {
+          padding: 0;
+          border: none;
+        }
+        /* Küçük resim — iki satır boyunca */
+        .item-table td:nth-child(1) {
+          grid-column: 1;
+          grid-row: 1 / 3;
+          align-self: center;
+        }
+        /* Ürün adı */
+        .item-table td:nth-child(2) {
+          grid-column: 2;
+          grid-row: 1;
+        }
+        /* Fiyat */
+        .item-table td:nth-child(3) {
+          grid-column: 3;
+          grid-row: 1;
+          white-space: nowrap;
+          font-size: 0.88rem;
+          font-weight: 600;
+        }
+        /* Durum */
+        .item-table td:nth-child(4) {
+          grid-column: 2;
+          grid-row: 2;
+        }
+        /* Aksiyonlar */
+        .item-table td:nth-child(5) {
+          grid-column: 3;
+          grid-row: 2;
+          justify-self: end;
+        }
+        .actions {
+          flex-direction: column;
+          gap: 4px;
+          align-items: stretch;
+        }
+        .actions .btn {
+          font-size: 0.72rem;
+          padding: 6px 10px;
+          text-align: center;
+        }
+
+        /* Modal — alt çekmece */
+        .modal-backdrop {
+          padding: 0;
+          align-items: flex-end;
+        }
+        .modal {
+          border-radius: 18px 18px 0 0;
+          padding: 24px 18px 32px;
+          max-height: 90vh;
+          max-width: 100%;
+        }
+        #catModal .modal {
+          border-radius: 18px 18px 0 0;
+          max-width: 100%;
+        }
+
+        /* Toast — tam genişlik */
+        .toast {
+          left: 12px;
+          right: 12px;
+          bottom: 16px;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .login-box {
+          padding: 24px 14px;
+        }
+        .app-main {
+          padding: 12px 8px 60px;
         }
       }
     </style>
@@ -810,6 +960,15 @@
           .forEach((li) => li.classList.remove("active"));
         event.currentTarget.classList.add("active");
         loadItems();
+        if (window.innerWidth <= 768) {
+          setTimeout(
+            () =>
+              document
+                .querySelector(".panel")
+                .scrollIntoView({ behavior: "smooth", block: "start" }),
+            80,
+          );
+        }
       }
 
       // Kategori CRUD

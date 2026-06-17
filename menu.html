@@ -4,26 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menü — Emin Fırın</title>
-    <meta name="description" content="Emin Fırın QR Menüsü — taze ekmek, poğaça, simit, tatlı ve içecekler." />
+    <meta
+      name="description"
+      content="Emin Fırın QR Menüsü — taze ekmek, poğaça, simit, tatlı ve içecekler."
+    />
     <link rel="canonical" href="https://eminfirincafe.com/menu.html" />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
 
     <style>
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-      :root {
-        --cream:   #fff5d8;
-        --cream2:  #faecc0;
-        --brown:   #4a2300;
-        --brown2:  #7a4010;
-        --muted:   rgba(74,35,0,0.48);
-        --border:  rgba(74,35,0,0.14);
-        --serif:   Georgia, 'Times New Roman', serif;
-        --sans:    'Helvetica Neue', Arial, sans-serif;
-        --radius:  10px;
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
-      html { scroll-behavior: smooth; }
+      :root {
+        --cream: #fff5d8;
+        --cream2: #faecc0;
+        --brown: #4a2300;
+        --brown2: #7a4010;
+        --muted: rgba(74, 35, 0, 0.48);
+        --border: rgba(74, 35, 0, 0.14);
+        --serif: Georgia, "Times New Roman", serif;
+        --sans: "Helvetica Neue", Arial, sans-serif;
+        --radius: 10px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
 
       body {
         background: var(--cream);
@@ -31,6 +42,7 @@
         font-family: var(--sans);
         min-height: 100vh;
         -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
 
       /* ---- Header ---- */
@@ -49,7 +61,10 @@
         margin-bottom: 10px;
       }
 
-      .menu-header__logo img { height: 56px; width: auto; }
+      .menu-header__logo img {
+        height: 56px;
+        width: auto;
+      }
 
       .menu-header__title {
         font-family: var(--serif);
@@ -74,7 +89,9 @@
         z-index: 90;
       }
 
-      .cat-tabs::-webkit-scrollbar { display: none; }
+      .cat-tabs::-webkit-scrollbar {
+        display: none;
+      }
 
       .cat-tab {
         display: inline-block;
@@ -86,7 +103,9 @@
         color: var(--muted);
         cursor: pointer;
         border-bottom: 2px solid transparent;
-        transition: color 0.2s, border-color 0.2s;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
         user-select: none;
         background: none;
         border-top: none;
@@ -138,11 +157,13 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        transition: box-shadow 0.25s, transform 0.25s;
+        transition:
+          box-shadow 0.25s,
+          transform 0.25s;
       }
 
       .item-card:hover {
-        box-shadow: 0 6px 24px rgba(74,35,0,0.12);
+        box-shadow: 0 6px 24px rgba(74, 35, 0, 0.12);
         transform: translateY(-2px);
       }
 
@@ -213,14 +234,17 @@
       }
 
       /* ---- Loading / Empty states ---- */
-      .state-loading, .state-empty, .state-error {
+      .state-loading,
+      .state-empty,
+      .state-error {
         text-align: center;
         padding: 80px 24px;
         color: var(--muted);
       }
 
       .state-loading__spinner {
-        width: 36px; height: 36px;
+        width: 36px;
+        height: 36px;
         border: 2px solid var(--border);
         border-top-color: var(--brown);
         border-radius: 50%;
@@ -228,33 +252,81 @@
         margin: 0 auto 20px;
       }
 
-      @keyframes spin { to { transform: rotate(360deg); } }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
 
-      .state-empty__icon { font-size: 2.4rem; margin-bottom: 12px; }
+      .state-empty__icon {
+        font-size: 2.4rem;
+        margin-bottom: 12px;
+      }
 
       /* ---- Footer ---- */
       .menu-footer {
         background: var(--brown);
-        color: rgba(255,245,216,0.55);
+        color: rgba(255, 245, 216, 0.55);
         text-align: center;
         padding: 24px 16px;
         font-size: 0.75rem;
         letter-spacing: 0.08em;
       }
 
-      .menu-footer a { color: var(--cream2); text-decoration: none; }
+      .menu-footer a {
+        color: var(--cream2);
+        text-decoration: none;
+      }
 
       /* ---- Responsive ---- */
-      @media (max-width: 480px) {
-        .items-grid { grid-template-columns: 1fr; }
-        .menu-header { top: 0; padding: 20px 16px 16px; }
-        .menu-header__logo img { height: 44px; }
-        .cat-tabs { top: 96px; }
+      @media (max-width: 640px) {
+        .items-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .menu-main {
+          padding: 24px 12px 60px;
+        }
+
+        .cat-section__title {
+          font-size: 1.2rem;
+        }
+
+        .cat-tab {
+          padding: 12px 12px;
+          font-size: 0.68rem;
+          letter-spacing: 0.08em;
+        }
+
+        .item-card__img {
+          height: 160px;
+        }
+
+        .item-card__name {
+          font-size: 0.9rem;
+        }
+
+        .item-card__price {
+          font-size: 1.05rem;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .menu-header {
+          padding: 14px 14px 10px;
+        }
+
+        .menu-header__logo img {
+          height: 40px;
+        }
+
+        .menu-main {
+          padding: 20px 10px 60px;
+        }
       }
     </style>
   </head>
   <body>
-
     <!-- Header -->
     <header class="menu-header">
       <a href="index.html" class="menu-header__logo">
@@ -276,34 +348,39 @@
 
     <!-- Footer -->
     <footer class="menu-footer">
-      <p>© 2026 Emin Fırın &nbsp;·&nbsp; <a href="tel:+905493470747">+90 549 347 07 47</a></p>
+      <p>
+        © 2026 Emin Fırın &nbsp;·&nbsp;
+        <a href="tel:+905493470747">+90 549 347 07 47</a>
+      </p>
     </footer>
 
     <!-- Supabase JS v2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <script>
       // ─── Supabase bağlantısı ───────────────────────────
-      const SUPABASE_URL  = 'YOUR_SUPABASE_URL';   // ← Supabase proje URL'ini buraya yapıştır
-      const SUPABASE_ANON = 'YOUR_SUPABASE_ANON_KEY'; // ← anon public key
+      const SUPABASE_URL = "https://psrkdpmnxdxsutpdyjtb.supabase.co"; // ← Supabase proje URL'ini buraya yapıştır
+      const SUPABASE_ANON = "sb_publishable_IHApcPm72s-UIqW9oLfjyQ_jDNj5k49"; // ← anon public key
 
       const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
 
       // ─── Fiyat formatlama ─────────────────────────────
-      const fmt = new Intl.NumberFormat('tr-TR', {
-        style: 'currency', currency: 'TRY', minimumFractionDigits: 2
+      const fmt = new Intl.NumberFormat("tr-TR", {
+        style: "currency",
+        currency: "TRY",
+        minimumFractionDigits: 2,
       });
 
       // ─── Menüyü çek ve oluştur ────────────────────────
       async function loadMenu() {
-        const main    = document.getElementById('menuMain');
-        const tabsEl  = document.getElementById('catTabs');
+        const main = document.getElementById("menuMain");
+        const tabsEl = document.getElementById("catTabs");
 
         try {
           // Kategorileri sıraya göre çek
           const { data: cats, error: catErr } = await sb
-            .from('categories')
-            .select('*')
-            .order('sort_order', { ascending: true });
+            .from("categories")
+            .select("*")
+            .order("sort_order", { ascending: true });
 
           if (catErr) throw catErr;
 
@@ -317,23 +394,25 @@
 
           // Tüm ürünleri tek sorguda çek
           const { data: items, error: itemErr } = await sb
-            .from('menu_items')
-            .select('*')
-            .order('sort_order', { ascending: true });
+            .from("menu_items")
+            .select("*")
+            .order("sort_order", { ascending: true });
 
           if (itemErr) throw itemErr;
 
           // Ürünleri kategori bazında grupla
           const byCategory = {};
-          cats.forEach(c => { byCategory[c.id] = []; });
-          (items || []).forEach(item => {
+          cats.forEach((c) => {
+            byCategory[c.id] = [];
+          });
+          (items || []).forEach((item) => {
             if (byCategory[item.category_id]) {
               byCategory[item.category_id].push(item);
             }
           });
 
           // Boş kategorileri filtrele
-          const activeCats = cats.filter(c => byCategory[c.id].length > 0);
+          const activeCats = cats.filter((c) => byCategory[c.id].length > 0);
 
           if (activeCats.length === 0) {
             main.innerHTML = `<div class="state-empty">
@@ -344,27 +423,34 @@
           }
 
           // Tab'ları oluştur
-          tabsEl.innerHTML = activeCats.map((c, i) => `
-            <button class="cat-tab ${i === 0 ? 'active' : ''}"
+          tabsEl.innerHTML = activeCats
+            .map(
+              (c, i) => `
+            <button class="cat-tab ${i === 0 ? "active" : ""}"
                     data-slug="${c.slug}"
                     onclick="scrollToSection('${c.slug}')">
               ${c.name}
             </button>
-          `).join('');
+          `,
+            )
+            .join("");
 
           // Kategorileri ve ürünleri oluştur
-          main.innerHTML = activeCats.map(cat => `
+          main.innerHTML = activeCats
+            .map(
+              (cat) => `
             <section class="cat-section" id="cat-${cat.slug}">
               <h2 class="cat-section__title">${cat.name}</h2>
               <div class="items-grid">
-                ${byCategory[cat.id].map(item => buildCard(item)).join('')}
+                ${byCategory[cat.id].map((item) => buildCard(item)).join("")}
               </div>
             </section>
-          `).join('');
+          `,
+            )
+            .join("");
 
           // Scroll spy için IntersectionObserver
           setupScrollSpy();
-
         } catch (err) {
           console.error(err);
           main.innerHTML = `<div class="state-error">
@@ -380,14 +466,14 @@
 
         const statusHtml = !item.available
           ? `<span class="item-card__unavailable">Tükendi</span>`
-          : '';
+          : "";
 
         const descHtml = item.description
           ? `<p class="item-card__desc">${escHtml(item.description)}</p>`
-          : '';
+          : "";
 
         return `
-          <div class="item-card ${!item.available ? 'item-card--sold-out' : ''}">
+          <div class="item-card ${!item.available ? "item-card--sold-out" : ""}">
             ${imgHtml}
             <div class="item-card__body">
               <div class="item-card__name">${escHtml(item.name)}</div>
@@ -401,33 +487,53 @@
       }
 
       function escHtml(str) {
-        return String(str ?? '')
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;');
+        return String(str ?? "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
       }
 
       function scrollToSection(slug) {
-        const el = document.getElementById('cat-' + slug);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const el = document.getElementById("cat-" + slug);
+        if (!el) return;
+        const headerH =
+          document.querySelector(".menu-header")?.offsetHeight || 0;
+        const tabsH = document.getElementById("catTabs")?.offsetHeight || 0;
+        const top =
+          el.getBoundingClientRect().top + window.scrollY - headerH - tabsH - 8;
+        window.scrollTo({ top, behavior: "smooth" });
       }
+
+      // Sticky tabs: header yüksekliğine göre top dinamik ayarlanır
+      function updateTabsTop() {
+        const h = document.querySelector(".menu-header");
+        const t = document.getElementById("catTabs");
+        if (h && t) t.style.top = h.offsetHeight + "px";
+      }
+      window.addEventListener("resize", updateTabsTop);
+      updateTabsTop();
 
       function setupScrollSpy() {
-        const sections = document.querySelectorAll('.cat-section');
-        const tabs     = document.querySelectorAll('.cat-tab');
-        const obs = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const slug = entry.target.id.replace('cat-', '');
-              tabs.forEach(t => t.classList.toggle('active', t.dataset.slug === slug));
-            }
-          });
-        }, { rootMargin: '-30% 0px -60% 0px' });
-        sections.forEach(s => obs.observe(s));
+        const sections = document.querySelectorAll(".cat-section");
+        const tabs = document.querySelectorAll(".cat-tab");
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const slug = entry.target.id.replace("cat-", "");
+                tabs.forEach((t) =>
+                  t.classList.toggle("active", t.dataset.slug === slug),
+                );
+              }
+            });
+          },
+          { rootMargin: "-30% 0px -60% 0px" },
+        );
+        sections.forEach((s) => obs.observe(s));
       }
 
-      loadMenu();
+      loadMenu().then(updateTabsTop);
     </script>
   </body>
 </html>
