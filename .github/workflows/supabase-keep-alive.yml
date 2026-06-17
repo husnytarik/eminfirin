@@ -1,0 +1,25 @@
+name: Supabase Keep-Alive
+
+# Her 3 günde bir çalışır (Supabase 7 günlük inaktivite sonrası projeyi duraklatır)
+on:
+  schedule:
+    - cron: '0 6 */3 * *'   # her 3 günde bir sabah 06:00 UTC
+  workflow_dispatch:          # manuel tetikleme (test için)
+
+jobs:
+  ping:
+    name: Ping Supabase REST API
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping categories table
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+            "${{ secrets.SUPABASE_URL }}/rest/v1/categories?select=id&limit=1")
+          echo "HTTP Status: $STATUS"
+          if [ "$STATUS" != "200" ]; then
+            echo "Ping başarısız! Status: $STATUS"
+            exit 1
+          fi
+          echo "Supabase aktif."
