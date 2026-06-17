@@ -73,9 +73,16 @@ body {
 
 .nav.scrolled {
   background: rgba(250,250,246,0.97);
+  box-shadow: 0 1px 0 rgba(61,32,16,0.08);
+}
+
+.nav.scrolled::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 1px 0 rgba(61,32,16,0.08);
+  pointer-events: none;
 }
 
 .nav__logo {
@@ -914,7 +921,7 @@ a.contact-line:hover { padding-left: 10px; }
     backdrop-filter: blur(12px);
   }
 
-  .nav__links.open a {
+  .nav .nav__links.open a {
     font-size: 1.4rem;
     letter-spacing: 0.1em;
     color: var(--white);
