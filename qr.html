@@ -3,329 +3,280 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emin Fırın — Takip Et & Değerlendir</title>
-    <meta name="description" content="Emin Fırın sosyal medya ve Google yorumları." />
+    <title>Emin Fırın</title>
+    <meta name="description" content="Emin Fırın — takip edin, değerlendirin." />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
-
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
       :root {
-        --cream:  #FAFAF6;
-        --cream2: #F4EEE2;
+        --bg:     #F5F0E8;
         --brown:  #3D2010;
         --brown2: #6B3A1F;
         --amber:  #C49A3C;
-        --muted:  rgba(30,16,9,0.44);
-        --border: rgba(61,32,16,0.10);
+        --white:  #FFFFFF;
+        --muted:  rgba(61,32,16,0.42);
+        --shadow: 0 2px 12px rgba(61,32,16,0.10);
+        --sans:   -apple-system, "Helvetica Neue", Arial, sans-serif;
         --serif:  Georgia, "Times New Roman", serif;
-        --sans:   "Helvetica Neue", Arial, sans-serif;
       }
 
-      html { height: 100%; }
+      html, body {
+        height: 100%;
+        font-family: var(--sans);
+        -webkit-font-smoothing: antialiased;
+        background: var(--bg);
+      }
 
       body {
-        min-height: 100%;
-        background: var(--cream);
-        color: var(--brown);
-        font-family: var(--sans);
         display: flex;
         flex-direction: column;
         align-items: center;
-        -webkit-font-smoothing: antialiased;
-        overflow-x: hidden;
+        min-height: 100%;
       }
 
-      /* ─── Üst bant ─── */
-      .top-bar {
+      /* ── Hero ── */
+      .hero {
         width: 100%;
         background: var(--brown);
         display: flex;
-        justify-content: center;
-        padding: 24px 24px 20px;
-      }
-
-      .top-bar__logo img {
-        height: 56px;
-        width: auto;
-        display: block;
-      }
-
-      /* ─── Ana kart ─── */
-      .card {
-        width: 100%;
-        max-width: 420px;
-        padding: 36px 28px 48px;
-        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0;
+        padding: 52px 24px 72px;
+        border-radius: 0 0 32px 32px;
+        position: relative;
+        z-index: 1;
       }
 
-      .card__eyebrow {
-        font-size: 0.62rem;
-        letter-spacing: 0.34em;
+      .hero__logo {
+        width: 72px;
+        height: 72px;
+        border-radius: 20px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        border: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .hero__logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero__name {
+        font-family: var(--serif);
+        font-size: 1.55rem;
+        font-weight: 400;
+        color: #fff;
+        letter-spacing: 0.02em;
+        margin-bottom: 6px;
+      }
+
+      .hero__location {
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
         text-transform: uppercase;
         color: var(--amber);
-        margin-bottom: 10px;
-        text-align: center;
       }
 
-      .card__headline {
-        font-family: var(--serif);
-        font-size: 1.75rem;
-        font-weight: 400;
-        color: var(--brown);
-        text-align: center;
-        line-height: 1.25;
-        margin-bottom: 8px;
-      }
-
-      .card__sub {
-        font-size: 0.82rem;
-        color: var(--muted);
-        text-align: center;
-        line-height: 1.7;
-        max-width: 300px;
-        margin-bottom: 40px;
-      }
-
-      /* ─── Grup başlıkları ─── */
-      .group {
+      /* ── Content ── */
+      .content {
         width: 100%;
-        margin-bottom: 32px;
-      }
-
-      .group__title {
-        font-size: 0.62rem;
-        letter-spacing: 0.28em;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin-bottom: 12px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .group__links {
+        max-width: 400px;
+        padding: 28px 20px 48px;
         display: flex;
         flex-direction: column;
         gap: 10px;
+        margin-top: -16px;
       }
 
-      /* ─── Butonlar ─── */
-      .btn {
+      /* ── Section label ── */
+      .label {
+        font-size: 0.60rem;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: var(--muted);
+        padding: 18px 4px 6px;
+      }
+
+      .label:first-child { padding-top: 8px; }
+
+      /* ── Link buttons ── */
+      .link-btn {
         display: flex;
         align-items: center;
         gap: 14px;
-        padding: 16px 20px;
-        border-radius: 8px;
+        padding: 14px 16px;
+        background: var(--white);
+        border-radius: 14px;
         text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-        transition: transform 0.18s, box-shadow 0.18s, opacity 0.18s;
+        box-shadow: var(--shadow);
+        transition: transform 0.15s, box-shadow 0.15s;
         -webkit-tap-highlight-color: transparent;
+        user-select: none;
       }
 
-      .btn:active {
+      .link-btn:active {
         transform: scale(0.97);
-        opacity: 0.88;
+        box-shadow: 0 1px 4px rgba(61,32,16,0.08);
       }
 
-      .btn__icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
+      @media (hover: hover) {
+        .link-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(61,32,16,0.14);
+        }
+      }
+
+      .link-btn__icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-shrink: 0;
       }
 
-      .btn__icon svg {
+      .link-btn__icon svg {
         width: 22px;
         height: 22px;
         display: block;
       }
 
-      .btn__text { flex: 1; }
-      .btn__text strong { display: block; font-weight: 600; color: inherit; }
-      .btn__text span { font-size: 0.72rem; opacity: 0.62; }
-
-      .btn__arrow {
-        font-size: 1.1rem;
-        opacity: 0.38;
-        transition: opacity 0.18s, transform 0.18s;
-      }
-
-      .btn:hover .btn__arrow { opacity: 0.7; transform: translateX(3px); }
-
-      /* Instagram */
-      .btn--instagram {
-        background: linear-gradient(135deg, #f9f3ec 0%, #fef0e6 100%);
-        border: 1px solid rgba(193,53,132,0.18);
-        color: #7a1f5a;
-        box-shadow: 0 1px 3px rgba(193,53,132,0.07);
-      }
-
-      .btn--instagram .btn__icon {
+      /* icon backgrounds */
+      .icon--instagram {
         background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
       }
-
-      .btn--instagram:hover {
-        box-shadow: 0 4px 16px rgba(193,53,132,0.16);
-        transform: translateY(-1px);
-      }
-
-      /* Facebook */
-      .btn--facebook {
-        background: #f0f4fc;
-        border: 1px solid rgba(24,119,242,0.18);
-        color: #0d3d8a;
-        box-shadow: 0 1px 3px rgba(24,119,242,0.07);
-      }
-
-      .btn--facebook .btn__icon {
-        background: #1877f2;
-      }
-
-      .btn--facebook:hover {
-        box-shadow: 0 4px 16px rgba(24,119,242,0.16);
-        transform: translateY(-1px);
-      }
-
-      /* Google */
-      .btn--google {
-        background: #f8f8f8;
-        border: 1px solid rgba(61,32,16,0.12);
-        color: var(--brown);
-        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-      }
-
-      .btn--google .btn__icon {
+      .icon--facebook { background: #1877f2; }
+      .icon--google   {
         background: #fff;
-        border: 1px solid rgba(0,0,0,0.08);
+        border: 1px solid rgba(0,0,0,0.10);
       }
 
-      .btn--google:hover {
-        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-        transform: translateY(-1px);
+      .link-btn__body { flex: 1; }
+
+      .link-btn__title {
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        display: block;
+        line-height: 1.2;
       }
 
-      /* ─── Divider ─── */
-      .divider {
-        width: 40px;
+      .link-btn__sub {
+        font-size: 0.72rem;
+        color: #999;
+        margin-top: 2px;
+        display: block;
+      }
+
+      .link-btn__chevron {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        opacity: 0.22;
+      }
+
+      /* ── Separator ── */
+      .sep {
         height: 1px;
-        background: var(--amber);
-        margin: 0 auto 32px;
-        opacity: 0.5;
+        background: rgba(61,32,16,0.08);
+        margin: 6px 4px;
       }
 
-      /* ─── Footer ─── */
-      .page-footer {
+      /* ── Footer ── */
+      .footer {
         margin-top: auto;
-        padding: 20px 24px 32px;
-        font-size: 0.68rem;
-        letter-spacing: 0.1em;
+        padding: 16px 24px 28px;
+        font-size: 0.65rem;
+        letter-spacing: 0.12em;
         color: var(--muted);
         text-align: center;
       }
 
-      .page-footer a {
+      .footer a {
         color: var(--brown);
         text-decoration: none;
-        opacity: 0.5;
-        transition: opacity 0.2s;
+        opacity: 0.55;
       }
-
-      .page-footer a:hover { opacity: 1; }
     </style>
   </head>
   <body>
 
-    <div class="top-bar">
-      <a href="index.html" class="top-bar__logo">
+    <div class="hero">
+      <div class="hero__logo">
         <img src="assets/images/Logo.png" alt="Emin Fırın" />
+      </div>
+      <div class="hero__name">Emin Fırın</div>
+      <div class="hero__location">Antalya · Muratpaşa</div>
+    </div>
+
+    <div class="content">
+
+      <div class="label">Bizi Takip Edin</div>
+
+      <a href="https://www.instagram.com/eminfirincafe" target="_blank" rel="noopener" class="link-btn">
+        <div class="link-btn__icon icon--instagram">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="white" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8"/>
+            <circle cx="17.5" cy="6.5" r="1.1" fill="white"/>
+          </svg>
+        </div>
+        <div class="link-btn__body">
+          <strong class="link-btn__title">Instagram</strong>
+          <span class="link-btn__sub">@eminfirincafe</span>
+        </div>
+        <svg class="link-btn__chevron" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
       </a>
-    </div>
 
-    <div class="card">
-
-      <p class="card__eyebrow">Emin Fırın · Antalya</p>
-      <h1 class="card__headline">Bize Katılın</h1>
-      <p class="card__sub">
-        Güncel içerikler, kampanyalar ve taze ürünler için bizi takip edin.
-        Deneyiminizi paylaşarak bize destek olun.
-      </p>
-
-      <!-- Takip Et -->
-      <div class="group">
-        <div class="group__title">Bizi Takip Edin</div>
-        <div class="group__links">
-
-          <a href="https://www.instagram.com/eminfirincafe" target="_blank" rel="noopener" class="btn btn--instagram">
-            <div class="btn__icon">
-              <!-- Instagram SVG -->
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="white" stroke-width="1.8"/>
-                <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8"/>
-                <circle cx="17.5" cy="6.5" r="1.1" fill="white"/>
-              </svg>
-            </div>
-            <div class="btn__text">
-              <strong>Instagram</strong>
-              <span>@eminfirincafe</span>
-            </div>
-            <span class="btn__arrow">›</span>
-          </a>
-
-          <a href="https://www.facebook.com/eminfirincafe" target="_blank" rel="noopener" class="btn btn--facebook">
-            <div class="btn__icon">
-              <!-- Facebook SVG -->
-              <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z"/>
-              </svg>
-            </div>
-            <div class="btn__text">
-              <strong>Facebook</strong>
-              <span>Emin Fırın</span>
-            </div>
-            <span class="btn__arrow">›</span>
-          </a>
-
+      <a href="https://www.facebook.com/eminfirincafe" target="_blank" rel="noopener" class="link-btn">
+        <div class="link-btn__icon icon--facebook">
+          <svg viewBox="0 0 24 24" fill="white">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z"/>
+          </svg>
         </div>
-      </div>
-
-      <div class="divider"></div>
-
-      <!-- Değerlendir -->
-      <div class="group">
-        <div class="group__title">Bizi Değerlendirin</div>
-        <div class="group__links">
-
-          <a href="https://g.page/r/GOOGLE_REVIEW_LINK_BURAYA/review" target="_blank" rel="noopener" class="btn btn--google">
-            <div class="btn__icon">
-              <!-- Google "G" SVG -->
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-            </div>
-            <div class="btn__text">
-              <strong>Google Yorumu Yaz</strong>
-              <span>Deneyiminizi paylaşın ⭐⭐⭐⭐⭐</span>
-            </div>
-            <span class="btn__arrow">›</span>
-          </a>
-
+        <div class="link-btn__body">
+          <strong class="link-btn__title">Facebook</strong>
+          <span class="link-btn__sub">Emin Fırın</span>
         </div>
-      </div>
+        <svg class="link-btn__chevron" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+
+      <div class="sep"></div>
+
+      <div class="label">Bizi Değerlendirin</div>
+
+      <a href="https://g.page/r/GOOGLE_REVIEW_LINK_BURAYA/review" target="_blank" rel="noopener" class="link-btn">
+        <div class="link-btn__icon icon--google">
+          <svg viewBox="0 0 24 24">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+        </div>
+        <div class="link-btn__body">
+          <strong class="link-btn__title">Google'da Yorum Yap</strong>
+          <span class="link-btn__sub">⭐⭐⭐⭐⭐ Deneyiminizi paylaşın</span>
+        </div>
+        <svg class="link-btn__chevron" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </a>
 
     </div>
 
-    <footer class="page-footer">
+    <footer class="footer">
       <a href="index.html">eminfirincafe.com</a>
       &nbsp;·&nbsp;
       <a href="menu.html">Menü</a>
